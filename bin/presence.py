@@ -16,8 +16,8 @@ import boto.route53
 # NOTE: zone must end with full stop, and name must be FQDN, with full stop
 
 parser = argparse.ArgumentParser(description='create dns record')
-parser.add_argument('--access-key', metavar='<ACCESS-KEY>', default=os.environ.get('ACCESS-KEY'), help='AWS Access Key')
-parser.add_argument('--secret-key', metavar='<SECRET-KEY>', default=os.environ.get('SECRET-KEY'), help='AWS Secret Key')
+parser.add_argument('--access-key', metavar='<ACCESS_KEY>', default=os.environ.get('ACCESS_KEY'), help='AWS Access Key')
+parser.add_argument('--secret-key', metavar='<SECRET_KEY>', default=os.environ.get('SECRET_KEY'), help='AWS Secret Key')
 parser.add_argument('--name', metavar='<NAME>', default=os.environ.get('NAME'),
                     help='Name of DNS record')
 parser.add_argument('--type', metavar='<TYPE>', default=os.environ.get('TYPE'),
