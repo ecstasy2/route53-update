@@ -43,7 +43,9 @@ ip_addr = None
 cmd = "curl -m 2 http://169.254.169.254/latest/meta-data/public-ipv4"
 
 if str2bool(args.private):
-    cmd = "curl -m 2 http://169.254.169.254/latest/meta-data/private-ipv4"
+    cmd = "curl -m 2 http://169.254.169.254/latest/meta-data/local-ipv4"
+
+print cmd
 
 process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
 ip_addr = process.communicate()[0]
