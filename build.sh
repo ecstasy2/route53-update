@@ -6,7 +6,7 @@ BRANCH=${BUILDKITE_COMMIT:-"develop"}
 
 TAG=${BRANCH:0:7}
 
-docker build -t edyn/logstash .
-docker tag edyn/logstash edyn/docker-logstash:"$TAG"
+docker build -t edyn/route53-update .
+docker tag edyn/route53-update edyn/route53-update:"$TAG"
 
-docker push edyn/docker-logstash:"$TAG"
+docker push edyn/route53-update:"$TAG"
