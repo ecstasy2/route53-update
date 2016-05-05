@@ -1,7 +1,12 @@
-FROM ubuntu:14.04
-MAINTAINER Daniel Schonfeld <downwindabeam@gmail.com>
+FROM iron/base
 
-RUN apt-get -q update && apt-get install -y python-boto curl nano
+MAINTAINER Mamadou Bobo Diallo <bobo.diaraye@gmail.com>
+
+RUN echo "@testing \http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+RUN apk update && apk upgrade \
+  && apk add py-boto curl \
+  && rm -rf /var/cache/apk/*
 
 ADD bin/presence.py /bin/presence.py
 
